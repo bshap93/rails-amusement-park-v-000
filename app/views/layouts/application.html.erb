@@ -23,8 +23,16 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-           <!--  nav here -->
+
+            <% if !logged_in? %>
+              <li><a href="/users/new">Sign up</a></li>
+              <li><a href="/signin">Sign in</a></li>
+            <% else %>
+              <li><a href="/logout">Sign out</a></li>
+            <% end %>
           </ul>
+          <%= content_tag(:div, flash[:error], :id => "flash_error") if flash[:error] %>
+          <%= content_tag(:div, flash[:notice], :id => "flash_notice") if flash[:notice] %>
         </div><!--/.nav-collapse -->
       </div>
     </div>
