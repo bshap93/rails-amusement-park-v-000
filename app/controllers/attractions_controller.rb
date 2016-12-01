@@ -10,6 +10,7 @@ class AttractionsController < ApplicationController
   # GET /attractions/1
   # GET /attractions/1.json
   def show
+    session[:attraction_id] = params[:id]
   end
 
   # GET /attractions/new

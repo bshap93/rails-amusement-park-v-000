@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  post '/users/:id', to: 'rides#take_ride', as: 'take'
+
   resources :attractions
 
   resources :users

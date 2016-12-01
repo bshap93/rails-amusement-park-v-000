@@ -28,7 +28,8 @@
               <li><a href="/users/new">Sign up</a></li>
               <li><a href="/signin">Sign in</a></li>
             <% else %>
-              <li><a href="/logout">Sign out</a></li>
+              <li><a href="<%= attractions_path %>">See attractions</a></li>
+              <li><a href="/logout">Log Out</a></li>
             <% end %>
           </ul>
           <%= content_tag(:div, flash[:error], :id => "flash_error") if flash[:error] %>
